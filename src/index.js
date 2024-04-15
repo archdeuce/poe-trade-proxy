@@ -43,7 +43,7 @@ app.post('/trade', async (request, response) => {
     const secondResponse = await secondRequest.json();
 
     response.setHeader('Content-Type', 'application/json');
-    response.send(secondResponse).status(200);
+    response.status(200).send(secondResponse);
   } catch (error) {
     response.status(503).send({ error: true, message: 'Server error' });
   }
